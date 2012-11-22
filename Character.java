@@ -21,11 +21,7 @@ public class Character{
 		Random randomGenerator = new Random();
 		int bonk = randomGenerator.nextInt(100);
 		if (bonk < this.hitChance){
-			int weaponDamage = weapon.damage();
-			double shieldAbsorb = shield.damageAbsorbPercent();
-			double damage2 = weaponDamage*shieldAbsorb;
-			System.out.println(weapon.damage() + " " + shield.damageAbsorbPercent() + " " + damage2);
-			int damage = (int)Math.round(damage2);
+			int damage = (int)Math.round(weapon.damage() * shield.damageAbsorbPercent());
 			System.out.println("Tjoff! " + name + " träffade med " + damage + " skada.");
 			return damage;
 			
