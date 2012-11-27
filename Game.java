@@ -54,8 +54,10 @@ private static Character setupCharacter(String mvh){
 		System.out.println("Välkommen till aftonnens huvudattraktion");
 		
 		Character a = setupCharacter("I vänster ringhörna ser vi?");
-		Character b = setupCharacter("Och i höger har vi?");
-
+		Character b = Character.loadCharacter();
+		System.out.println("och i höger har vi " + b.getName());
+		a.saveCharacter();
+		
 		boolean mer = true;
 		while(mer){
 			mer = fajt(a,b);

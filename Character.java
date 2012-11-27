@@ -31,7 +31,7 @@ public class Character{
 	}
 	
 	public void saveCharacter(){
-		String filnamn = "charsave.txt";
+		String filnamn = "Saves/charsave.txt";
 		String resultat = name + " " + hp + " " + shield;
 		try{
 			FileWriter fw = new FileWriter(new File(filnamn));
@@ -39,8 +39,35 @@ public class Character{
 			fw.close();
 		}
 		catch(IOException e){
-		System.out.println("Hoppsan (" + e.toString() + ")");
+			System.out.println("Hoppsan (" + e.toString() + ")");
 		}
+	}
+	
+	public static Character loadCharacter(){
+		String filnamn = "Saves/charsave.txt";
+		String resultat = "";
+		try {
+			FileReader fr = new FileReader(new File(filnamn));
+			int a = fr.read();
+			char b;
+			while (a != -1) {
+				b = (char)a;
+				resultat += b;
+				a = fr.read();
+			}
+			fr.close();
+		}
+		catch(FileNotFoundException e) {
+			System.out.println("Hittade inte filen (" + e.toString() + ")");
+		}
+		catch(IOException e) {
+			System.out.println("Hoppsan! (" + e.toString() + ")");
+		}
+		StringTokenizer st = new StringTokennizer(resultat);
+		String name = st.nextToken();
+		int hp = Integer.parseInt(st.nextToken());
+		int skill = Integer.parseInt(st.nextToken());
+		return new Character(name, skill, new Weapon(), new Shield());
 	}
 	
 	public void dies(){
