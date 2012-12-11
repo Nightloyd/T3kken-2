@@ -63,7 +63,7 @@ public class Character{
 		catch(IOException e) {
 			System.out.println("Hoppsan! (" + e.toString() + ")");
 		}
-		StringTokenizer st = new StringTokennizer(resultat);
+		StringTokenizer st = new StringTokenizer(resultat);
 		String name = st.nextToken();
 		int hp = Integer.parseInt(st.nextToken());
 		int skill = Integer.parseInt(st.nextToken());
