@@ -67,7 +67,7 @@ public class Character{
 		String name = st.nextToken();
 		int hp = Integer.parseInt(st.nextToken());
 		int skill = Integer.parseInt(st.nextToken());
-		return new Character(name, skill, new Weapon(), new Shield());
+		return new Character(name, skill, new Shield(), new Weapon());
 	}
 	
 	public void dies(){

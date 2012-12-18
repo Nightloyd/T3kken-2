@@ -74,7 +74,7 @@ class CharacterGUI implements ActionListener {
 				int inHitChance = Integer.parseInt(txtHitChance.getText());
 				Weapon inWeapon = new Weapon();
 				Shield inShield = new Shield();
-				Character nyCharacter = new Character(inNamn, inHitChance, inWeapon, inShield);
+				Character nyCharacter = new Character(inNamn, inHitChance, inShield, inWeapon);
 				nyCharacter.saveCharacter();
 			}
 			else if (ae.equals("Kör")){
