@@ -3,14 +3,14 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 
-class CharacterGUI implements ActionListener {
+public class CharacterGUI implements ActionListener {
 	
 	JFrame frmCharacter = new JFrame("Character creation");
 	JLabel lblGreeting = new JLabel("Hejsan, här skapas gubben");
 	JLabel lblDummy = new JLabel("");
 	JLabel lblDummyW = new JLabel("");
 	JLabel lblDummyS = new JLabel("");
-	JLabel lblName = new JLabel("Namn;");
+	JLabel lblName = new JLabel("Namn:");
 	JLabel lblHitChance = new JLabel("Hit Chance % :");
 	JLabel lblWeapon = new JLabel("Vapen:");
 	JLabel lblShield = new JLabel("Sköld:");
