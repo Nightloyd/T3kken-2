@@ -25,6 +25,8 @@ public class CharacterGUI implements ActionListener {
 	JButton btnCreate = new JButton("Skapa");
 	JButton btnRun = new JButton("Kör");
 	
+	Weapon inWeapon;
+	
 	//denna metod aktiverar krysset i övre högra hörnet
 	private WindowAdapter hornStang(){
 		return new WindowAdapter(){
@@ -64,6 +66,8 @@ public class CharacterGUI implements ActionListener {
 		
 		btnCreate.addActionListener(this);
 		btnRun.addActionListener(this);
+		rbnWNotDefault.addActionListener(this);
+		
 	}//konstruktur
 	
 	public void actionPerformed (ActionEvent a){
@@ -77,10 +81,13 @@ public class CharacterGUI implements ActionListener {
 				Character nyCharacter = new Character(inNamn, inHitChance, inShield, inWeapon);
 				nyCharacter.saveCharacter();
 			}
-			else if (ae.equals("Kör")){
+			if (ae.equals("Kör")){
 				Game hitit = new Game();
 				hitit.go();
 			}
+			else if(ae.equals("Egen design")){
+				WeaponGUI denna = new WeaponGUI();
+				}
 		}
 		catch(Exception e){
 			System.out.println(""+e.getMessage());
