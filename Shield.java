@@ -1,11 +1,10 @@
-import java.util.*;
 
 public class Shield{
 	private String type;
 	private int damageAbsorbtion;
 	
 	public Shield(){
-		type = "Big Shield";
+		type = "Nukol";
 		damageAbsorbtion = 20;
 	}
 	

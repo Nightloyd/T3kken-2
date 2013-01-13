@@ -32,7 +32,7 @@ public class Character{
 	
 	public void saveCharacter(){
 		String filnamn = "Saves/charsave.txt";
-		String resultat = name + " " + hp + " " + shield;
+		String resultat = name + " " + hp + " " + hitChance + " " + shield.getType() + " " + shield.getDamageAbsorbtion();
 		try{
 			FileWriter fw = new FileWriter(new File(filnamn));
 			fw.write(resultat);
@@ -67,7 +67,9 @@ public class Character{
 		String name = st.nextToken();
 		int hp = Integer.parseInt(st.nextToken());
 		int skill = Integer.parseInt(st.nextToken());
-		return new Character(name, skill, new Shield(), new Weapon());
+		String inShieldName = st.nextToken();
+		int shieldAbsorbtion = Integer.parseInt(st.nextToken());
+		return new Character(name, skill, new Shield(inShieldName, shieldAbsorbtion), new Weapon());
 	}
 	
 	public void dies(){

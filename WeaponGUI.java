@@ -1,7 +1,13 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.io.*;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 public class WeaponGUI implements ActionListener{
 	
@@ -48,12 +54,17 @@ public class WeaponGUI implements ActionListener{
 				String type = lblType.getText();
 				int minimumDamage = Integer.parseInt(txtMinimumDamage.getText());
 				int maxDamage = Integer.parseInt(txtMaxDamage.getText());
-				weapon = new Weapon(type, minimumDamage, maxDamage);
+				CharacterGUI setWeapon = new CharacterGUI();
+				setWeapon.setInWeapon(type, minimumDamage, maxDamage);
 			}
 		}
 		catch(Exception e){
 			System.out.println(""+e.getMessage());
 		}
 	}//Action Performed
+	
+	public Weapon weaponGUIRUN(){
+		return weapon;
+	}
 	
 }

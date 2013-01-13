@@ -28,7 +28,7 @@ public class SetUp{
 	public static Shield setupShield(){
 		System.out.println("Vill du ha en Big Shield?");
 		String svar = Keyboard.readString();
-		if(svar.equalsIgnoreCase("nej"))
+		if(svar.equalsIgnoreCase("ja"))
 			return new Shield();
 		System.out.println("Vilken sköld vill du ha?");
 		String typ = Keyboard.readString();
