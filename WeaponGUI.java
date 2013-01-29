@@ -54,8 +54,7 @@ public class WeaponGUI implements ActionListener{
 				String type = lblType.getText();
 				int minimumDamage = Integer.parseInt(txtMinimumDamage.getText());
 				int maxDamage = Integer.parseInt(txtMaxDamage.getText());
-				CharacterGUI setWeapon = new CharacterGUI();
-				setWeapon.setInWeapon(type, minimumDamage, maxDamage);
+				weapon = new Weapon(type, minimumDamage, maxDamage);
 			}
 		}
 		catch(Exception e){
@@ -64,6 +63,7 @@ public class WeaponGUI implements ActionListener{
 	}//Action Performed
 	
 	public Weapon weaponGUIRUN(){
+		
 		return weapon;
 	}
 	

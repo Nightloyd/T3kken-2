@@ -110,8 +110,9 @@ public class CharacterGUI implements ActionListener {
 			}
 			
 			else if(ae.equals("Egen design svärd")){
-				new WeaponGUI();
-				}
+				WeaponGUI wg = new WeaponGUI();
+				Weapon w = wg.weaponGUIRUN();
+			}
 		}
 		catch(Exception e){
 			System.out.println(""+e.getMessage());
